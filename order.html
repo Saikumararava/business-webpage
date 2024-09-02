@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place an Order - Sai Leela Fabrications</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Place Your Order</h2>
+        <form action="order-confirmation.html" method="post" id="orderForm" onsubmit="return redirectToOrderConfirmationPage()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" placeholder="Your Delivery Address" rows="3" required></textarea>
+
+            <label for="product">Select Product:</label>
+            <select id="product" name="product" required>
+                <option value="iron-railing">Iron Railing</option>
+                <option value="iron-gate">Iron Gate</option>
+                <option value="iron-shutter">Iron Shutter</option>
+                <option value="custom-fabrication">Custom Fabrication</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required min="1">
+
+            <label for="length">Length (in meters):</label>
+            <input type="number" id="length" name="length" placeholder="Enter Length" step="0.01" required>
+
+            <label for="width">Width (in meters):</label>
+            <input type="number" id="width" name="width" placeholder="Enter Width" step="0.01" required>
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" placeholder="Enter Weight" step="0.1" required>
+
+            <label for="comments">Additional Requirements:</label>
+            <textarea id="comments" name="comments" placeholder="Any specific instructions or details..." rows="4"></textarea>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToOrderConfirmationPage() {
+            window.location.href = 'order-confirmation.html';
+            return false; // Prevent actual form submission since we're not sending data to a server
+        }
+    </script>
+</body>
+</html>
